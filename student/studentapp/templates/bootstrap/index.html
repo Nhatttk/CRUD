@@ -1,0 +1,29 @@
+{% extends 'bootstrap/layout.html' %}
+
+
+{% block content %}
+{% load static %}
+
+  <h2>Student Table</h2>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in data %}
+        <tr>
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.age}}</td>
+          <td><img src="{{item.image.url}}" width="150px"></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}
